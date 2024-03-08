@@ -92,6 +92,42 @@ double find_mean(vector<int> vec) {
 
 }
 
+void find_mode(vector<int> vec) {
+
+    int mode = -1;
+    int current_count = 1;
+    int max_count = 1;
+
+    for (int i = 1; i < vec.size(); i++) {
+        
+        if (vec[i] == vec [i - 1]) {
+            current_count++;
+        }
+        
+        else {
+            if (current_count > max_count) {
+                max_count = current_count;
+                mode = vec[i - 1];
+            }
+            current_count = 1;
+        }
+
+    }
+
+    if (current_count > max_count) {
+        mode = vec[vec.size() - 1];
+    }
+
+    if (mode != -1) {
+        cout << "The mode is " << mode << endl;
+    }
+
+    else {
+        cout << "No mode found." << endl;
+    }
+
+}
+
 int main() {
     
     string filename;
@@ -106,4 +142,6 @@ int main() {
     cout << "The median is " << find_median(vec) << endl;
 
     cout << "The mean is " << find_mean(vec) << endl;
+
+    find_mode(vec);
 }
