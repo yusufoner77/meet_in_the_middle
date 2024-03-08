@@ -76,6 +76,22 @@ double find_median(vector<int> vec) {
     return median;
 }
 
+double find_mean(vector<int> vec) {
+
+    double mean;
+    double sum = 0;
+    int number_of_elements = vec.size();
+
+    for (int i = 0; i < vec.size(); i++) {
+        sum = sum + vec[i];
+    }
+
+    mean = sum / number_of_elements;
+
+    return mean;
+
+}
+
 int main() {
     
     string filename;
@@ -88,4 +104,6 @@ int main() {
     vector<int> vec = store_in_vector(str);
 
     cout << "The median is " << find_median(vec) << endl;
+
+    cout << "The mean is " << find_mean(vec) << endl;
 }
