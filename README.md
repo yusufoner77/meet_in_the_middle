@@ -7,4 +7,6 @@ Requirements:
 In order to run the program, you will need to be able to compile and run C++ programs on your machine.
 
 To run the program:
+```bash
 g++ main.cpp && ./a.out
+```
